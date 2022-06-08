@@ -77,5 +77,7 @@ object WordCountExample {
     //Action - saveAsTextFile
     rdd5.saveAsTextFile("c:/tmp/wordCount")
 
+
+
   }
 }
