@@ -11,6 +11,7 @@ object Actions1 {
     val inputrdd = spark.sparkContext.parallelize(List(("Z", 1),("A", 20),("B", 30),("C", 40),("B", 30),("B", 60)))
     val listRdd = spark.sparkContext.parallelize(List(1,2,3,4,5,3,2))
     inputrdd.foreach(println)
+    listRdd.foreach(println)
   }
 
 }

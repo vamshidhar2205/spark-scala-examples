@@ -12,10 +12,12 @@ object RDDShuffleExample extends App {
 
   val sc = spark.sparkContext
 
-  val rdd:RDD[String] = sc.textFile("src/main/resources/test.txt")
+  val rdd:RDD[String] = sc.textFile("C:\\Users\\vamsh\\IdeaProjects\\spark-scala-examples\\src\\main\\resources\\test.txt")
 
-  println(rdd.getNumPartitions)
-  val rdd2 = rdd.flatMap(f=>f.split(" "))
+  val rdd1=rdd.repartition(4)
+
+  println(rdd1.getNumPartitions)
+  val rdd2 = rdd1.flatMap(f=>f.split(" "))
   .map(m=>(m,1))
 
   //ReduceBy transformation
@@ -23,5 +25,7 @@ object RDDShuffleExample extends App {
 
   println(rdd5.getNumPartitions)
 
-  
+
+
+
 }
